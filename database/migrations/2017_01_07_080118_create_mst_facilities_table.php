@@ -15,6 +15,14 @@ class CreateMstFacilitiesTable extends Migration
     {
         Schema::create('mst_facilities', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('facility_id',4);
+            $table->string('name',50);
+            $table->integer('facility_cd',4);
+            $table->string('image_path',200);
+            $table->string('image_thumbnail_path',200);
+
+            $table->integer('created_id',4);
+            $table->integer('modified_id',4);
             $table->timestamps();
         });
     }
