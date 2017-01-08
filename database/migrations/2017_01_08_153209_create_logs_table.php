@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReservationFacilitiesTable extends Migration
+class CreateLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateReservationFacilitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('reservation_facilities', function (Blueprint $table) {
+        Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('reservation_id');
-            $table->integer('facility_id');
-            $table->integer('reserve_count');
-
+            $table->string('controller',30);
+            $table->string('action',30);
             $table->integer('created_id');
-            $table->integer('modified_id');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateReservationFacilitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservation_facilities');
+        Schema::dropIfExists('logs');
     }
 }

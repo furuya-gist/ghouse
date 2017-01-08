@@ -16,16 +16,16 @@ class CreateReservationsTable extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->timestamp('rsv_start');
-            $table->timestamp('rsv_end');
-            $table->binary('is_hold');
-            $table->binary('is_template');
-            $table->integer('rsv_user_id',4);
+            $table->timestamp('rsv_start')->nullable()->default(null);
+            $table->timestamp('rsv_end')->nullable()->default(null);
+            $table->boolean('is_hold');
+            $table->boolean('is_template');
+            $table->integer('rsv_user_id');
             $table->string('rsv_user_nm',10);
-            $table->string('comment',1000);
+            $table->string('comment',500);
 
-            $table->integer('created_id',4);
-            $table->integer('modified_id',4);
+            $table->integer('created_id');
+            $table->integer('modified_id');
             $table->timestamps();
         });
     }
