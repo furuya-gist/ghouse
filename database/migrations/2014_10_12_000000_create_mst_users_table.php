@@ -21,7 +21,7 @@ class CreateMstUsersTable extends Migration
             $table->string('name',10);
             $table->string('tel',10);
             $table->integer('lock_count');
-            $table->string('mail',100);
+            $table->string('email',100);
             $table->integer('role');
             $table->integer('created_id');
             $table->integer('modified_id');
