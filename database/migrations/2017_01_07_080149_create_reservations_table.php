@@ -16,11 +16,12 @@ class CreateReservationsTable extends Migration
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->string('title')->default('notitle');
             $table->timestamp('rsv_start')->nullable()->default(null);
             $table->timestamp('rsv_end')->nullable()->default(null);
-            $table->boolean('is_hold');
-            $table->boolean('is_template');
-            $table->integer('rsv_user_id');
+            $table->boolean('is_hold');//仮予約
+            $table->boolean('is_template');//雛形の記事
+            $table->integer('rsv_user_id');//予約者
             $table->string('rsv_user_nm',10);
             $table->string('comment',500);
 
