@@ -23,10 +23,10 @@
             <label for="">予約日</label>
             <div class="form-inline">
                 <div>
-                    <label for="">開始日{{ $target->rsv_start }}</label>
-                    <input class="form-control" type="date" name="rsv_start" value="{{ $target->rsv_start }}">
+                    <label for="">開始日</label>
+                    <input class="form-control" type="date" name="rsv_start" value="{{ date_format(date_create($target->rsv_start),"Y-m-d") }}">
                     <label for="">終了日</label>
-                    <input class="form-control" type="date" name="rsv_end" value="{{ $target->rsv_end }}">
+                    <input class="form-control" type="date" name="rsv_end" value="{{ date_format(date_create($target->rsv_end),"Y-m-d")}}">
                 </div>
             </div>
         </div>

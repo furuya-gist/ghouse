@@ -35,13 +35,13 @@ class ReservationsController extends Controller
         ]);
 
         $data = new Reservation;
-        $data->rsv_user_nm = $request->get('rsv_user_nm','noname');
-        $data->title = $request->get('title','notitle');
-        $data->rsv_start = $request->get('rsv_start');
-        $data->rsv_end = $request->get('rsv_end');
-        $data->is_hold = $request->get('is_hold',0);
-        $data->is_template = $request->get('is_template',0);
-        $data->comment = $request->get('comment');
+        $data->rsv_user_nm = $request->input('rsv_user_nm');
+        $data->title = $request->input('title');
+        $data->rsv_start = $request->input('rsv_start');
+        $data->rsv_end = $request->input('rsv_end');
+        $data->is_hold = $request->input('is_hold') == "on" ? 1 : 0;
+        $data->is_template = $request->input('is_template') == "on" ? 1 : 0;
+        $data->comment = $request->input('comment');
 
         $data->rsv_user_id = 1;
         $data->created_id = 1;
@@ -69,13 +69,13 @@ class ReservationsController extends Controller
         ]);
 
         $data = new Reservation;
-        $data->rsv_user_nm = $request->get('rsv_user_nm','noname');
-        $data->title = $request->get('title','notitle');
-        $data->rsv_start = $request->get('rsv_start');
-        $data->rsv_end = $request->get('rsv_end');
-        $data->is_hold = $request->get('is_hold',0);
-        $data->is_template = $request->get('is_template',0);
-        $data->comment = $request->get('comment');
+        $data->rsv_user_nm = $request->input('rsv_user_nm');
+        $data->title = $request->input('title');
+        $data->rsv_start = $request->input('rsv_start');
+        $data->rsv_end = $request->input('rsv_end');
+        $data->is_hold = $request->input('is_hold') == "on" ? 1 : 0;
+        $data->is_template = $request->input('is_template') == "on" ? 1 : 0;
+        $data->comment = $request->input('comment');
 
         $data->rsv_user_id = 1;
         $data->created_id = 1;

@@ -13,7 +13,7 @@
                 <label for="title">タイトル</label>
                 <input class="form-control" type="text" id="title" name="title">
                 <input class="form-check-input" type="checkbox" name="is_hold">一時保存
-                <input class="form-check-input" type="checkbox" name="is_temp">雛形にする
+                <input class="form-check-input" type="checkbox" name="is_template">雛形にする
             </div>
             <div class="form-group">
                 <label for="">予約者</label>
@@ -24,9 +24,9 @@
                 <div class="form-inline">
                     <div>
                         <label for="">開始日</label>
-                        <input class="form-control" type="date" value="{{ date('Y-m-d') }}">
+                        <input class="form-control" type="date" name="rsv_start" value="{{ date('Y-m-d') }}">
                         <label for="">終了日</label>
-                        <input class="form-control" type="date" value="{{ date('Y-m-d') }}">
+                        <input class="form-control" type="date" name="rsv_end" value="{{ date('Y-m-d') }}">
                     </div>
                 </div>
             </div>
