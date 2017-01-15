@@ -7,34 +7,48 @@ use Illuminate\Http\Request;
 
 class FacilitiesController extends Controller
 {
-    //設備情報の一覧を表示する
-    public function index(){
-        $data = Facility::all();
-        return view("facility.index",
-            [ 'data' => $data ]);
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'only' => ['create', 'store', 'edit', 'update', 'delete']
+        ]);
     }
 
+    //予約情報のリストを表示する
+    public function index(){
+        $data = Facility::all();
+
+        return view('facility.index',[
+            'data' => $data
+        ]);
+    }
+
+
     public function create(){
-        return view("reservation.create");
+        return view("facility.create");
     }
 
     public function store(){
         return redirect("home");
     }
 
-    public function show($msg){
+    public function show($id){
 
     }
 
     public function edit($msg){
     }
 
-    public function update($msg){
+    public function update($id){
 
         return redirect("/");
     }
 
-    public function destroy($msg){
-        return redirect("/");
+    public function destroy($id){
+
+        $target = Facility::find($id);
+        $target.delete();
+
+        return redirect()->route('facility.index');
     }
 }

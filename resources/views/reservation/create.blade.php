@@ -6,9 +6,9 @@
 
 @section('content')
     <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-    <form href="{{route('reservation.store')}}" method="post">
+    <form action="{{route('reservation.store')}}" method="POST">
         {!! csrf_field() !!}
-
+            {{--<input type="hidden" name="_method" value="put">--}}
             <div class="form-group">
                 <label for="title">タイトル</label>
                 <input class="form-control" type="text" id="title" name="title">
@@ -17,16 +17,16 @@
             </div>
             <div class="form-group">
                 <label for="">予約者</label>
-                <input class="form-control" name="rsv_user_id" type="text">
+                <input class="form-control" name="rsv_user_nm" type="text">
             </div>
             <div class="form-group">
                 <label for="">予約日</label>
                 <div class="form-inline">
                     <div>
                         <label for="">開始日</label>
-                        <input class="form-control" type="date">
+                        <input class="form-control" type="date" value="{{ date() }}">
                         <label for="">終了日</label>
-                        <input class="form-control" type="date">
+                        <input class="form-control" type="date" value="{{ date() }}">
                     </div>
                 </div>
             </div>
@@ -37,6 +37,6 @@
             </div>
 
             <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-            <button type="submit" class="btn btn-success" href="{{route("reservation.store")}}">登録</button>
+            <button type="submit" class="btn btn-success">登録</button>
     </form>
 @endsection

@@ -6,7 +6,7 @@
 
 @section('content')
     <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-    <form href="{{route('reservation.store')}}" method="post">
+    <form action="{{route('facility.update',[ 'id' => $target->id ])}}" method="post">
         {!! csrf_field() !!}
 
         <div class="form-group">
@@ -36,7 +36,12 @@
             <textarea class="form-control" id="comment" name="comment"></textarea>
         </div>
 
-        <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-        <button type="submit" class="btn btn-success" href="{{route("reservation.store")}}">登録</button>
+        <div class="form-group row">
+            <div class="col-xs-offset-2 col-xs-10">
+
+                <a class="btn btn-default" href="{{route('home')}}">戻る</a>
+                <button type="submit" class="btn btn-success">登録</button>
+            </div>
+        </div>
     </form>
 @endsection

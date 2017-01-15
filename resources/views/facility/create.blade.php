@@ -6,8 +6,8 @@
 
 @section('content')
     <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-    <form href="{{route('reservation.store')}}" method="post">
         {!! csrf_field() !!}
+        <form action="{{route('facility.store')}}" method="POST">
 
         <div class="form-group">
             <label for="title">タイトル</label>
@@ -37,6 +37,6 @@
         </div>
 
         <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-        <button type="submit" class="btn btn-success" href="{{route("reservation.store")}}">登録</button>
+        <button type="submit" class="btn btn-success">登録</button>
     </form>
 @endsection
