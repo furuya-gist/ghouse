@@ -48,7 +48,7 @@ class ReservationsController extends Controller
         $data->modified_id = 1;
         $data->save();
 
-        return redirect("home");
+        return redirect()->route('reservation.index');
     }
 
     public function show($id){
@@ -82,15 +82,14 @@ class ReservationsController extends Controller
         $data->modified_id = 1;
         $data->save();
 
-        return redirect("home");
+        return redirect()->route('reservation.index');
     }
 
     public function destroy($id){
 
         $target = Reservation::find($id);
-        $target.delete();
+        $target->delete();
 
         return redirect()->route('reservation.index');
-
     }
 }

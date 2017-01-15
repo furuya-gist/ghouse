@@ -5,8 +5,8 @@
 @endsection
 
 @section('content')
-    <a class="btn btn-default" href="{{route('home')}}">戻る</a>
-    <form action="{{route('reservation.destroy',[ 'id' => $target->id ])}}" method="delete">
+    <a class="btn btn-default" href="{{route('reservation.index')}}">戻る</a>
+    <form action="{{route('reservation.destroy',[ 'id' => $target->id ])}}" method="POST">
         {!! csrf_field() !!}
 
         <input type="hidden" name="_method" value="DELETE">
@@ -41,7 +41,7 @@
         <div class="form-group row">
             <div class="col-xs-offset-2 col-xs-10">
 
-                <a class="btn btn-default" href="{{route('home')}}">戻る</a>
+                <a class="btn btn-default" href="{{route('reservation.index')}}">戻る</a>
                 <button type="submit" class="btn btn-danger">削除</button>
             </div>
         </div>

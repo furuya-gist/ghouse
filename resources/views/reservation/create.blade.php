@@ -24,9 +24,9 @@
                 <div class="form-inline">
                     <div>
                         <label for="">開始日</label>
-                        <input class="form-control" type="date" value="{{ date() }}">
+                        <input class="form-control" type="date" value="{{ date('Y-m-d') }}">
                         <label for="">終了日</label>
-                        <input class="form-control" type="date" value="{{ date() }}">
+                        <input class="form-control" type="date" value="{{ date('Y-m-d') }}">
                     </div>
                 </div>
             </div>
